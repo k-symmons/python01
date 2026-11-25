@@ -15,8 +15,10 @@ class Plant:
             self._show_calls += 1
 
         def display(self) -> None:
-            print(f"Stats: {self._grow_calls} grow, {self._age_calls} age, "
-                  f"{self._show_calls} show")
+            print(
+                f"Stats: {self._grow_calls} grow, {self._age_calls} age, "
+                f"{self._show_calls} show"
+            )
 
     def __init__(self, name: str, height: float, age: int) -> None:
         self._name = name
@@ -72,8 +74,7 @@ class Plant:
 
 
 class Flower(Plant):
-    def __init__(self, name: str, height: float, age: int,
-                 color: str) -> None:
+    def __init__(self, name: str, height: float, age: int, color: str) -> None:
         super().__init__(name, height, age)
         self.color = color
         self._bloomed = False
@@ -91,17 +92,20 @@ class Flower(Plant):
 
 
 class Tree(Plant):
-    def __init__(self, name: str, height: float, age: int,
-                 trunk_diameter: float) -> None:
+    def __init__(
+        self, name: str, height: float, age: int, trunk_diameter: float
+    ) -> None:
         super().__init__(name, height, age)
         self.trunk_diameter = trunk_diameter
         self._shade_calls = 0
 
     def produce_shade(self) -> None:
         self._shade_calls += 1
-        print(f"Tree {self._name} now produces a shade of "
-              f"{self._height:.1f}cm long and "
-              f"{self.trunk_diameter:.1f}cm wide.")
+        print(
+            f"Tree {self._name} now produces a shade of "
+            f"{self._height:.1f}cm long and "
+            f"{self.trunk_diameter:.1f}cm wide."
+        )
 
     def show(self) -> None:
         super().show()
@@ -113,8 +117,7 @@ class Tree(Plant):
 
 
 class Vegetable(Plant):
-    def __init__(self, name: str, height: float, age: int,
-                 harvest_season: str) -> None:
+    def __init__(self, name: str, height: float, age: int, harvest_season: str) -> None:
         super().__init__(name, height, age)
         self.harvest_season = harvest_season
         self.nutritional_value = 0
@@ -134,8 +137,7 @@ class Vegetable(Plant):
 
 
 class Seed(Flower):
-    def __init__(self, name: str, height: float, age: int,
-                 color: str) -> None:
+    def __init__(self, name: str, height: float, age: int, color: str) -> None:
         super().__init__(name, height, age, color)
         self._seed_count = 0
 
